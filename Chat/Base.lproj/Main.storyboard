@@ -24,14 +24,74 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4AG-gH-GxV" userLabel="底部工具条">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat_bottom_bg" translatesAutoresizingMaskIntoConstraints="NO" id="IRS-fH-cO9">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uka-X1-3E6">
+                                        <rect key="frame" x="331" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="Fhn-2B-IaQ"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="mdW-P6-sjn"/>
+                                            <constraint firstAttribute="height" constant="44" id="q5m-vf-bat"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="xQr-zg-z8O"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="chat_bottom_up_nor"/>
+                                        <state key="highlighted" backgroundImage="chat_bottom_up_press"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vk-a5-jzx">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="KBB-cU-uGM"/>
+                                            <constraint firstAttribute="width" constant="44" id="Zy0-Wn-Bkn"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="chat_bottom_voice_nor"/>
+                                        <state key="highlighted" backgroundImage="chat_bottom_voice_press"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opp-5F-f2A">
+                                        <rect key="frame" x="287" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="63a-ll-OXV"/>
+                                            <constraint firstAttribute="width" constant="44" id="BNa-B3-hxu"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="chat_bottom_smile_nor"/>
+                                        <state key="highlighted" backgroundImage="chat_bottom_smile_press"/>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" background="chat_bottom_textfield" translatesAutoresizingMaskIntoConstraints="NO" id="0gX-rj-6Kc">
+                                        <rect key="frame" x="44" y="5" width="243" height="34"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.37291914380000002" blue="0.91973715239999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="7vk-a5-jzx" firstAttribute="top" secondItem="4AG-gH-GxV" secondAttribute="top" id="0VI-RN-EFj"/>
+                                    <constraint firstAttribute="trailing" secondItem="IRS-fH-cO9" secondAttribute="trailing" id="3zK-Ci-51M"/>
+                                    <constraint firstItem="opp-5F-f2A" firstAttribute="leading" secondItem="0gX-rj-6Kc" secondAttribute="trailing" id="72Z-cB-fHn"/>
+                                    <constraint firstItem="Uka-X1-3E6" firstAttribute="leading" secondItem="opp-5F-f2A" secondAttribute="trailing" id="Dgv-A0-I8F"/>
                                     <constraint firstAttribute="height" constant="44" id="Ero-0H-2fd"/>
+                                    <constraint firstAttribute="bottom" secondItem="Uka-X1-3E6" secondAttribute="bottom" id="FfO-0Y-RhB"/>
+                                    <constraint firstItem="0gX-rj-6Kc" firstAttribute="leading" secondItem="7vk-a5-jzx" secondAttribute="trailing" id="GgD-Jp-sUa"/>
+                                    <constraint firstAttribute="bottom" secondItem="opp-5F-f2A" secondAttribute="bottom" id="Jhf-G3-LMU"/>
+                                    <constraint firstItem="opp-5F-f2A" firstAttribute="top" secondItem="4AG-gH-GxV" secondAttribute="top" id="Ui7-xZ-jJ9"/>
+                                    <constraint firstItem="7vk-a5-jzx" firstAttribute="leading" secondItem="4AG-gH-GxV" secondAttribute="leading" id="WzM-LZ-T68"/>
+                                    <constraint firstItem="0gX-rj-6Kc" firstAttribute="top" secondItem="4AG-gH-GxV" secondAttribute="top" constant="5" id="fm8-5F-XYN"/>
+                                    <constraint firstAttribute="bottom" secondItem="7vk-a5-jzx" secondAttribute="bottom" id="h16-SU-IZk"/>
+                                    <constraint firstItem="IRS-fH-cO9" firstAttribute="top" secondItem="4AG-gH-GxV" secondAttribute="top" id="mpU-A7-Znq"/>
+                                    <constraint firstAttribute="bottom" secondItem="IRS-fH-cO9" secondAttribute="bottom" id="pG0-QB-Ymf"/>
+                                    <constraint firstAttribute="bottom" secondItem="0gX-rj-6Kc" secondAttribute="bottom" constant="5" id="rB8-WT-cgY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Uka-X1-3E6" secondAttribute="trailing" id="rDE-fR-Etf"/>
+                                    <constraint firstItem="Uka-X1-3E6" firstAttribute="top" secondItem="4AG-gH-GxV" secondAttribute="top" id="uya-U3-Vh1"/>
+                                    <constraint firstItem="IRS-fH-cO9" firstAttribute="leading" secondItem="4AG-gH-GxV" secondAttribute="leading" id="y5X-mm-xRo"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="125" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lsc-eL-Xgf">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                 <color key="backgroundColor" red="0.69267214369999996" green="1" blue="0.33878402689999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="623" id="zvf-zp-zq4"/>
+                                </constraints>
                                 <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="message" rowHeight="125" id="apt-l7-lbb" customClass="HQMessageViewCell">
@@ -42,7 +102,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昨天 10：10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUC-2D-qbB">
-                                                    <rect key="frame" x="137" y="10" width="100" height="20.5"/>
+                                                    <rect key="frame" x="137" y="10" width="100" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="pEI-Qy-AiW"/>
                                                     </constraints>
@@ -51,36 +111,38 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me" translatesAutoresizingMaskIntoConstraints="NO" id="w65-8R-n9O">
-                                                    <rect key="frame" x="315" y="40.5" width="50" height="50"/>
+                                                    <rect key="frame" x="315" y="41" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="etg-e2-8Hu"/>
                                                         <constraint firstAttribute="width" constant="50" id="zos-n3-sUw"/>
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kci-hT-Lda">
-                                                    <rect key="frame" x="247" y="40.5" width="60" height="34"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="223" y="41" width="84" height="56"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="dbh-8X-ugq"/>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="hc2-7R-0r5"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button"/>
+                                                    <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                                                    <state key="normal" title="Button" backgroundImage="chat_send_nor"/>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="other" translatesAutoresizingMaskIntoConstraints="NO" id="8BL-zA-HuS">
-                                                    <rect key="frame" x="18" y="40.5" width="50" height="50"/>
+                                                    <rect key="frame" x="18" y="41" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="EgK-PC-vPI"/>
                                                         <constraint firstAttribute="height" constant="50" id="Q6n-Tr-mWz"/>
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bgz-ru-zEr">
-                                                    <rect key="frame" x="78" y="40.5" width="60" height="34"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <rect key="frame" x="78" y="41" width="84" height="56"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="R75-iC-ktt"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="mN4-Yq-AEX"/>
                                                     </constraints>
-                                                    <state key="normal" title="Button"/>
+                                                    <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                                                    <state key="normal" title="Button" backgroundImage="chat_recive_nor">
+                                                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="0.78727254629999999" blue="0.1942614852" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -118,12 +180,15 @@
                             <constraint firstItem="4AG-gH-GxV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="20n-EP-Htf"/>
                             <constraint firstItem="lsc-eL-Xgf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Q4F-sd-2aQ"/>
                             <constraint firstItem="4AG-gH-GxV" firstAttribute="top" secondItem="lsc-eL-Xgf" secondAttribute="bottom" id="SRe-RN-xZ2"/>
-                            <constraint firstItem="lsc-eL-Xgf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="SfV-7z-hT7"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4AG-gH-GxV" secondAttribute="bottom" id="X54-wx-X7h"/>
                             <constraint firstAttribute="trailing" secondItem="lsc-eL-Xgf" secondAttribute="trailing" id="eAv-It-AUG"/>
                             <constraint firstAttribute="trailing" secondItem="4AG-gH-GxV" secondAttribute="trailing" id="ufE-Sn-MDR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bottomSpace" destination="X54-wx-X7h" id="ZIY-pP-6wL"/>
+                        <outlet property="messageField" destination="0gX-rj-6Kc" id="1eC-AO-uLV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -131,6 +196,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chat_bottom_bg" width="10" height="42"/>
+        <image name="chat_bottom_smile_nor" width="34" height="34"/>
+        <image name="chat_bottom_smile_press" width="34" height="34"/>
+        <image name="chat_bottom_textfield" width="166" height="31"/>
+        <image name="chat_bottom_up_nor" width="34" height="34"/>
+        <image name="chat_bottom_up_press" width="34" height="34"/>
+        <image name="chat_bottom_voice_nor" width="34" height="34"/>
+        <image name="chat_bottom_voice_press" width="34" height="34"/>
+        <image name="chat_recive_nor" width="48" height="56"/>
+        <image name="chat_send_nor" width="49" height="56"/>
         <image name="me" width="100" height="100"/>
         <image name="other" width="100" height="100"/>
     </resources>

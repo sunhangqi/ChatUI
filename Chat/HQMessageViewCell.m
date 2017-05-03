@@ -99,7 +99,6 @@
     [super awakeFromNib];
     self.contentButton.titleLabel.numberOfLines = 0;
     self.otherContentButton.titleLabel.numberOfLines = 0;
-    self.contentButton.titleLabel.backgroundColor = [UIColor grayColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -123,7 +122,7 @@
     
     //设置按钮的高度就是titleLabel的高度
     [showTextButton updateConstraints:^(MASConstraintMaker *make) {
-        CGFloat buttonH = showTextButton.titleLabel.frame.size.height;
+        CGFloat buttonH = showTextButton.titleLabel.frame.size.height + 30;
         make.height.equalTo(buttonH);
     }];
     
@@ -133,6 +132,9 @@
     CGFloat buttonMaxY = CGRectGetMaxY(showTextButton.frame);
     CGFloat iconMaxY = CGRectGetMaxY(showIconView.frame);
     self.message.cellHeight = MAX(buttonMaxY, iconMaxY) + 10;
+    
+    [showTextButton layoutIfNeeded];
+    
 
 }
 
