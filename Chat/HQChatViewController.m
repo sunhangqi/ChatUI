@@ -10,10 +10,11 @@
 #import "HQMessage.h"
 #import "HQMessageViewCell.h"
 
+
 @interface HQChatViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSArray *messages;
 @property (weak, nonatomic) IBOutlet UITextField *messageField;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomSpace;
+//@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomSpace;
 
 @end
 
@@ -51,43 +52,41 @@
     // Do any additional setup after loading the view.
     
     //发送通知
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillHideNotification object:nil];
 }
 
-- (void)keyboardWillShow:(NSNotification *)note {
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+- (void)keyboardWillChangeFrame:(NSNotification *)note {
     NSLog(@"HELLO - %@", note.userInfo);
     //数组对象转换成CGRect
     CGRect rect = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    self.bottomSpace.constant = rect.size.height;
-    NSLog(@"%f",self.bottomSpace.constant);
+//    self.bottomSpace.constant = rect.size.height;
+//    NSLog(@"%f",self.bottomSpace.constant);
     double duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     [UIView animateWithDuration:duration animations:^{
-        [self.view layoutIfNeeded];
+        CGFloat ty = [UIScreen mainScreen].bounds.size.height - rect.origin.y;
+        self.view.transform = CGAffineTransformMakeTranslation(0, -ty);
+//        NSLog(@"ty=%f",ty);
+//        [self.view layoutIfNeeded];
     }];
     
 }
 
-- (void)keyboardWillHide:(NSNotification *)note {
-    NSLog(@"HELLO - %@", note.userInfo);
-    //数组对象转换成CGRect
-//    CGRect rect = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    self.bottomSpace.constant = 0;
-    NSLog(@"%f",self.bottomSpace.constant);
-    double duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    [UIView animateWithDuration:duration animations:^{
-        [self.view layoutIfNeeded];
-    }];
-    
-}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.messages.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HQMessageViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"message"];
-    cell.message = self.messages[indexPath.row];
+    
+    HQMessage *msg = self.messages[indexPath.row];
+    NSString *ID = msg.type == HQMessageTypeMe ? @"me":@"other";
+    HQMessageViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    cell.message = msg;
     return cell;
 }
 

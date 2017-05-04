@@ -118,7 +118,7 @@
     [showTextButton setTitle:self.message.text forState:UIControlStateNormal];
     
     //强制更新,将button类型设置成custom.
-    [showTextButton layoutIfNeeded];
+    [self layoutIfNeeded];
     
     //设置按钮的高度就是titleLabel的高度
     [showTextButton updateConstraints:^(MASConstraintMaker *make) {
@@ -126,14 +126,14 @@
         make.height.equalTo(buttonH);
     }];
     
-    [showTextButton layoutIfNeeded];
+    [self layoutIfNeeded];
     
     //设置cell的高度
     CGFloat buttonMaxY = CGRectGetMaxY(showTextButton.frame);
     CGFloat iconMaxY = CGRectGetMaxY(showIconView.frame);
     self.message.cellHeight = MAX(buttonMaxY, iconMaxY) + 10;
     
-    [showTextButton layoutIfNeeded];
+    [self layoutIfNeeded];
     
 
 }
